@@ -6,6 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const dagshtick = express_1.default.Router();
 dagshtick.get('/', (req, res) => {
-    res.render(`Dagshtick/index.html`);
+    res.render('Dagshtick/index.html');
 });
 exports.default = dagshtick;

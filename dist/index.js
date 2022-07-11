@@ -38,5 +38,20 @@ app.get('/ar', (req, res) => {
 app.get('/en', (req, res) => {
     res.render(`index.html`);
 });
+app.get('/test', (req, res) => {
+    const error = new Error("message");
+    error.code = "500";
+    throw error;
+});
+app.use(function (err, req, res, next) {
+    console.error(err);
+    res.status(404).render('errPages/404err.html');
+    next(err);
+});
+app.use(function (err, req, res, next) {
+    console.error(err);
+    res.status(500).render('errPages/500err.html');
+    next(err);
+});
 app.listen(process.env.PORT || port, () => console.log(`listening on port http://localhost:${port}...`));
 exports.default = app;

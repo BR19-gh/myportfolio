@@ -6,6 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const onethree = express_1.default.Router();
 onethree.get('/', (req, res) => {
-    res.render(`onethree/index.html`);
+    res.render('onethree/index.html');
 });
 exports.default = onethree;

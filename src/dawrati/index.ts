@@ -1,11 +1,9 @@
-import express from "express";
+import express from 'express';
 
 const dawrati = express.Router();
 
-
 dawrati.get('/', (req, res) => {
-    res.render(`dawrati/main.html`);
+    res.render('dawrati/main.html');
 });
-
 
 export default dawrati;

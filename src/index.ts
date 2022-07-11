@@ -1,4 +1,4 @@
-import express from "express";
+import express, { NextFunction, ErrorRequestHandler } from 'express'
 import path from "path";
 
 import indexes from './indexes';
@@ -41,6 +41,23 @@ app.get('/en', (req, res) => {
   res.render(`index.html`);
 });
 
+app.get('/test', (req, res) => {
+  const error: NodeJS.ErrnoException = new Error("message")
+  error.code = "500"
+  throw error;
+});
+
+app.use(<ErrorRequestHandler>function(err, req, res, next: NextFunction) {
+  console.error(err);
+  res.status(404).render('errPages/404err.html');
+  next(err);
+})
+
+app.use(<ErrorRequestHandler>function(err, req, res, next: NextFunction) {
+  console.error(err);
+  res.status(500).render('errPages/500err.html');
+  next(err);
+})
 
 app.listen(process.env.PORT || port, () => console.log(`listening on port http://localhost:${port}...`));
 

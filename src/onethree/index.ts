@@ -1,11 +1,9 @@
-import express from "express";
+import express from 'express';
 
 const onethree = express.Router();
 
-
 onethree.get('/', (req, res) => {
-    res.render(`onethree/index.html`);
+    res.render('onethree/index.html');
 });
-
 
 export default onethree;

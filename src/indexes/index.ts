@@ -1,14 +1,13 @@
-import express from "express";
+import express from 'express';
 
 const index = express.Router();
 
-
 index.get('/ar', (req, res) => {
-    res.render(`indexAr.html`);
+    res.render('indexAr.html');
 });
 
 index.get('/en', (req, res) => {
-    res.render(`index.html`);
+    res.render('index.html');
 });
 
 export default index;
