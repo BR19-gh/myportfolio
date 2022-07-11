@@ -4,12 +4,11 @@
     "description": "My Personal Portfolio",
     "main": "src/index.ts",
     "scripts": {
-        "postinstall": "npm run tsc",
-        "tsc": "tsc",
+        "deploy": "npm run build && git add . && git commit -m 'make it better' && git push origin",
         "build": "npx tsc",
         "format": "lint && prettier",
         "start-local": "nodemon src/index.ts",
-        "start": "npm run build && node dist/index.js",
+        "start": "node dist/index.js",
         "jasmine": "jasmine",
         "test": "npm run build && npm run jasmine",
         "lint": "eslint . --ext .ts",
@@ -49,15 +48,9 @@
         "typescript": "^4.7.4"
     },
     "dependencies": {
-        "@types/ejs": "^3.1.1",
-        "@types/express": "^4.17.13",
-        "@types/express-rate-limit": "^6.0.0",
-        "@types/jasmine": "^4.0.3",
-        "@types/node": "^18.0.0",
         "ejs": "^3.1.8",
         "express": "^4.18.1",
-        "express-rate-limit": "^6.4.0",
-        "ts-node": "^10.8.1"
+        "express-rate-limit": "^6.4.0"
     },
     "homepage": "https://github.com/BR19-gh/myportfolio#readme"
 }
