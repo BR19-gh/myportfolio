@@ -38,5 +38,5 @@ app.get('/ar', (req, res) => {
 app.get('/en', (req, res) => {
     res.render(`index.html`);
 });
-app.listen(port, () => console.log(`listening on port http://localhost:${port}...`));
+app.listen(process.env.PORT || port, () => console.log(`listening on port http://localhost:${port}...`));
 exports.default = app;

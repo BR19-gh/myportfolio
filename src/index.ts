@@ -42,6 +42,6 @@ app.get('/en', (req, res) => {
 });
 
 
-app.listen(port, () => console.log(`listening on port http://localhost:${port}...`));
+app.listen(process.env.PORT || port, () => console.log(`listening on port http://localhost:${port}...`));
 
 export default app;
