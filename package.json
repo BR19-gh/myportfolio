@@ -4,6 +4,8 @@
     "description": "My Personal Portfolio",
     "main": "src/index.ts",
     "scripts": {
+        "postinstall": "npm run tsc",
+        "tsc": "tsc",
         "build": "npx tsc",
         "format": "lint && prettier",
         "start-local": "nodemon src/index.ts",
