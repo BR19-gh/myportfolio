@@ -49,5 +49,9 @@ app.use(function (err, req, res, next) {
     res.status(500).render('errPages/500err.html');
     next(err);
 });
+app.use(function (req, res, err) {
+    console.error(err);
+    res.status(404).render('errPages/404err.html');
+});
 app.listen(process.env.PORT || port, () => console.log(`listening on port http://localhost:${port}...`));
 exports.default = app;
