@@ -50,7 +50,7 @@ app.get('/test', (req, res) => {
 app.use(<ErrorRequestHandler>function (err, req, res, next: NextFunction) {
   console.error(err);
   if(err.status == 404) res.status(404).render('errPages/404err.html');
-  else if(err.status == 500) res.status(500).render('errPages/500err.html');
+//  else if(err.status == 500) res.status(500).render('errPages/500err.html');
   next(err);
 })
 
