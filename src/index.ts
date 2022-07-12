@@ -54,11 +54,6 @@ app.use(<ErrorRequestHandler>function (err, req, res, next: NextFunction) {
   next(err);
 })
 
-app.use(function (req, res, err) {
-  console.error(err)
-  res.status(404).render('errPages/404err.html');
-});
-
 app.listen(process.env.PORT || port, () => console.log(`listening on port http://localhost:${port}...`));
 
 export default app;
