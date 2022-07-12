@@ -47,19 +47,12 @@ app.get('/test', (req, res) => {
   throw error;
 });
 
-app.use(<ErrorRequestHandler>function(err, req, res, next: NextFunction) {
-  console.error('the error is',err);
-  console.log('the error is',err);
+app.use(<ErrorRequestHandler>function (err, req, res, next: NextFunction) {
+  console.error(err);
+  res.status(404).render('errPages/404err.html');
   res.status(500).render('errPages/500err.html');
   next(err);
 })
-
-app.use(<ErrorRequestHandler>function(err, req, res, next: NextFunction) {
-  console.error(err);
-  res.status(404).render('errPages/404err.html');
-  next(err);
-})
-
 
 
 app.listen(process.env.PORT || port, () => console.log(`listening on port http://localhost:${port}...`));
