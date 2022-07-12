@@ -45,8 +45,10 @@ app.get('/test', (req, res) => {
 });
 app.use(function (err, req, res, next) {
     console.error(err);
-    res.status(404).render('errPages/404err.html');
-    res.status(500).render('errPages/500err.html');
+    if (err.status == 404)
+        res.status(404).render('errPages/404err.html');
+    else if (err.status == 500)
+        res.status(500).render('errPages/500err.html');
     next(err);
 });
 app.use(function (req, res, err) {
