@@ -45,6 +45,7 @@ app.get('/test', (req, res) => {
 });
 app.use(function (err, req, res, next) {
     console.error('the error is', err);
+    console.log('the error is', err);
     res.status(500).render('errPages/500err.html');
     next(err);
 });

@@ -49,6 +49,7 @@ app.get('/test', (req, res) => {
 
 app.use(<ErrorRequestHandler>function(err, req, res, next: NextFunction) {
   console.error('the error is',err);
+  console.log('the error is',err);
   res.status(500).render('errPages/500err.html');
   next(err);
 })
