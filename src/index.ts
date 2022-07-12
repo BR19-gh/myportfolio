@@ -9,6 +9,7 @@ import blogger from './blogger';
 import onethree from './onethree';
 
 import logger from './utilities/logger';
+import { nextTick } from 'process';
 
 
 const app = express();
@@ -41,18 +42,25 @@ app.get('/en', (req, res) => {
   res.render(`index.html`);
 });
 
-app.get('/test', (req, res) => {
-  const error: NodeJS.ErrnoException = new Error("message")
-  error.code = "500"
-  throw error;
-});
+// app.get('/test', (req, res) => {
+//   const error: NodeJS.ErrnoException = new Error("message")
+//   error.code = "500"
+//   throw error;
+// });
 
-app.use(<ErrorRequestHandler>function (err, req, res, next: NextFunction) {
-  console.error(err);
-  if(err.status == 404) res.status(404).render('errPages/404err.html');
-//  else if(err.status == 500) res.status(500).render('errPages/500err.html');
-  next(err);
-})
+// error handlers
+
+// Handle 404
+app.use(function(req, res) {
+  res.status(404);
+ res.render('errPages/404err.html', {title: '404: File Not Found'});
+ });
+ 
+ // Handle 500
+ app.use(<ErrorRequestHandler>function(err, req, res, next) {
+   res.status(500);
+ res.render('errPages/500err.html', {title:'500: Internal Server Error', err: err});
+ });
 
 app.listen(process.env.PORT || port, () => console.log(`listening on port http://localhost:${port}...`));
 
