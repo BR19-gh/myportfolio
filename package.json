@@ -4,7 +4,7 @@
     "description": "My Personal Portfolio",
     "main": "src/index.ts",
     "scripts": {
-        "deploy": "npm run build && git add . && git commit -m \"make it better\" && git push origin",
+        "deploy": "npm run build && git add . && git commit && git push origin",
         "build": "npx tsc",
         "format": "lint && prettier",
         "start-local": "nodemon src/index.ts",
