@@ -22,11 +22,13 @@
 
 This is my Portfolio, written using Bootstrap and ExpressJS framework, you can use its templates for personal purposes only.
 
+<img src="/static/img/forgithub.png"></img>
+
 ## About me 🔎:
 
 - My Name is Ibrahim Alkhowaiter 🏷️👤.
 
-- Computer Scince Graduate form QU 🎓.
+- Computer Science Graduate form QU 🎓.
 
 - FullStack and Software Developer 💻🌐.
 
