@@ -20,6 +20,8 @@
 <br>
 <br>
 
+This is my Portfolio, written using Bootstrap and ExpressJS framework, you can use its templates for personal purposes.
+
 ## About me 🔎:
 
 - My Name is Ibrahim Alkhowaiter 🏷️👤.
