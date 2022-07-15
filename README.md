@@ -20,7 +20,7 @@
 <br>
 <br>
 
-This is my Portfolio, written using Bootstrap and ExpressJS framework, you can use its templates for personal purposes.
+This is my Portfolio, written using Bootstrap and ExpressJS framework, you can use its templates for personal purposes only.
 
 ## About me 🔎:
 
